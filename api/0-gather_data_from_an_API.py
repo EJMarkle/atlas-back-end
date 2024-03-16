@@ -30,7 +30,10 @@ def GetEmployeeData(EmployeeID):
     DoneTasks = [todo for todo in TodoData if todo['completed']]
 
     """ print todo list progress """
-    print(f"Employee {EmployeeName} is done with tasks ({len(DoneTasks)}/{TotalTasks}):")
+    print(
+        f"Employee {EmployeeName} is done with tasks "
+        f"({len(DoneTasks)}/{TotalTasks}):"
+    )
     for task in DoneTasks:
         print(f"\t{task['title']}")
 
