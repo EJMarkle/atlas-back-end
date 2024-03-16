@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """ Returns JSONPlaceholder TODO data for a specified employee. """
-import sys
 import requests
+import sys
 """ retrieve employee todo data """
 
 
