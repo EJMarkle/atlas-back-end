@@ -4,7 +4,6 @@ import sys
 import requests
 
 
-
 """ retrieve employee todo data """
 def GetEmployeeData(EmployeeID):
     url = 'https://jsonplaceholder.typicode.com'
@@ -16,7 +15,7 @@ def GetEmployeeData(EmployeeID):
     if UserResponse.status_code != 200:
         print(f"Error: unable to fetch user data from ID")
         return
-    
+
     UserData = UserResponse.json()
     EmployeeName = UserData['name']
 
@@ -25,7 +24,7 @@ def GetEmployeeData(EmployeeID):
     if TodoResponse.status_code != 200:
         print(f"Error: unable to fetch todo data from ID")
         return
-    
+
     TodoData = TodoResponse.json()
     TotalTasks = len(TodoData)
     DoneTasks = [todo for todo in TodoData if todo['completed']]
@@ -34,6 +33,7 @@ def GetEmployeeData(EmployeeID):
     print(f"Employee {EmployeeName} is done with tasks ({len(DoneTasks)}/{TotalTasks}):")
     for task in DoneTasks:
         print(f"\t{task['title']}")
+
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
