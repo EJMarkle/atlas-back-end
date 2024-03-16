@@ -35,7 +35,7 @@ def GetEmployeeData(EmployeeID):
         f"({len(DoneTasks)}/{TotalTasks}):"
     )
     for task in DoneTasks:
-        print(f"\t{task['title']}")
+         print(f"\t{task['title']}")
 
 
 if __name__ == "__main__":
