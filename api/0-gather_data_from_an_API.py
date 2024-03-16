@@ -2,9 +2,9 @@
 """ Returns JSONPlaceholder TODO data for a specified employee. """
 import sys
 import requests
-
-
 """ retrieve employee todo data """
+
+
 def GetEmployeeData(EmployeeID):
     url = 'https://jsonplaceholder.typicode.com'
     urlUser = f'{url}/users/{EmployeeID}'
@@ -30,7 +30,8 @@ def GetEmployeeData(EmployeeID):
     DoneTasks = [todo for todo in TodoData if todo['completed']]
 
     """ print todo list progress """
-    print(f"Employee {EmployeeName} is done with tasks ({len(DoneTasks)}/{TotalTasks}):")
+    print(f"Employee {EmployeeName} is done with tasks ({len(DoneTasks)}/
+          {TotalTasks}):")
     for task in DoneTasks:
         print(f"\t{task['title']}")
 
