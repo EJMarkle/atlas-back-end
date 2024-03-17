@@ -41,7 +41,8 @@ def GetEmployeeData(EmployeeID):
     with open(filename, mode='w', newline='') as csvfile:
         fieldnames = ['USER_ID', 'USERNAME',
                       'TASK_COMPLETED_STATUS', 'TASK_TITLE']
-        writer = csv.DictWriter(csvfile, fieldnames=fieldnames, quoting=csv.QUOTE_ALL)
+        writer = csv.DictWriter(csvfile,
+                                fieldnames=fieldnames, quoting=csv.QUOTE_ALL)
 
         writer.writeheader()
         for todo in TodoData:
