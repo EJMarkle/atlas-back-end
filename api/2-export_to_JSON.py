@@ -39,7 +39,11 @@ def GetEmployeeData(EmployeeID):
     """ write to JSON """
     filename = f"{EmployeeID}.json"
     with open(filename, mode='w') as jsonfile:
-        json.dump({EmployeeID: [{"task": todo['title'], "completed": todo['completed'], "username": EmployeeName} for todo in TodoData]}, jsonfile)
+        json.dump({EmployeeID: [{
+            "task": todo['title'],
+            "completed": todo['completed'],
+            "username": EmployeeName
+            } for todo in TodoData]}, jsonfile)
 
 
 if __name__ == "__main__":
