@@ -33,7 +33,7 @@ def GetEmployeeData(EmployeeID):
     print("Employee {} is done with tasks({}/{}):"
           .format(EmployeeName, len(DoneTasks), TotalTasks))
     for task in DoneTasks:
-        print(f"{task['title']}")
+        print(f"\t{task['title']}")
 
 
 if __name__ == "__main__":
