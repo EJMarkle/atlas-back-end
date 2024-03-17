@@ -39,20 +39,21 @@ def GetEmployeeData(EmployeeID):
     """ write to CSV """
     filename = f"{EmployeeID}.csv"
     with open(filename, mode='w', newline='') as csvfile:
-        fieldnames = ['USER_ID', 'USERNAME', 'TASK_COMPLETED_STATUS', 'TASK_TITLE']
-        writer  = csv.DictWriter(csvfile, fieldnames=fieldnames)
+        fieldnames = ['USER_ID', 'USERNAME',
+                      'TASK_COMPLETED_STATUS', 'TASK_TITLE']
+        writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
 
         writer.writeheader()
         for todo in TodoData:
             writer.writerow({
-                'USER_ID' : EmployeeID,
-                'USERNAME' : EmployeeName,
-                'TASK_COMPLETED_STATUS' : str(todo['completed']),
-                'TASK_TITLE' : todo['title']
-             })
+                'USER_ID': EmployeeID,
+                'USERNAME': EmployeeName,
+                'TASK_COMPLETED_STATUS': str(todo['completed']),
+                'TASK_TITLE': todo['title']
+            })
 
 
-if __name__ == "__main__":  
+if __name__ == "__main__":
     if len(sys.argv) != 2:
         print("Too many arguments")
         sys.exit(1)
